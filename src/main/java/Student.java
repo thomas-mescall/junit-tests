@@ -8,13 +8,30 @@ public class Student {
     public Student(String name, long id){
         this.name = name;
         this.id = id;
+        this.grades = new ArrayList<>();
     }
 
-//    public String getName(){
-//        return name;
-//    }
+    public String getName(){
+        return this.name;
+    }
 
-//    public void addGrade(double grade){
-//        grades.add(grade);
-//    }
+    public ArrayList<Integer> getGrades(){
+        return this.grades;
+    }
+
+    public long getId(){
+        return this.id;
+    }
+
+    public void addGrade(int grade){
+        this.grades.add(grade);
+    }
+
+    public double getGradeAverage() {
+        double num = 0;
+        for(int grade : this.grades) {
+            num += grade;
+        }
+        return num / this.grades.size();
+    }
 }
